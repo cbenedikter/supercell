@@ -137,6 +137,7 @@ transparencyBtn.addEventListener('click', () => {
 goldPassLink.addEventListener('click', (e) => {
     e.preventDefault();
     goldPassLink.classList.toggle('clicked');
+    console.log("Gold Pass clicked");
     
     const tags = { 
 cart_update: Date.now(),
@@ -151,6 +152,7 @@ OneSignal.User.addTags(tags);
 extraImageLink.addEventListener('click', (e) => {
     e.preventDefault();
     extraImageLink.classList.toggle('clicked');
+    console.log("Gold Pass clicked");
 
     const tags = { 
  cart_update: Date.now(),
