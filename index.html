@@ -139,8 +139,8 @@ goldPassLink.addEventListener('click', (e) => {
     console.log("Gold Pass clicked");
    
     const tags = { 
-cart_update: Date.now()/1000,
- product_name: "Gold Pass",
+cart_update: Math.floor(Date.now() / 1000),
+product_name: "Gold Pass",
  KEY_03: "VALUE_03"
 };
 OneSignal.User.addTags(tags);
@@ -155,7 +155,7 @@ extraImageLink.addEventListener('click', (e) => {
     console.log("Chest of Gems clicked");
  
     const tags = { 
- cart_update: Date.now()/1000,
+cart_update: Math.floor(Date.now() / 1000),
  product_name: "Chest of Gems",
  KEY_03: "VALUE_03"
 };
