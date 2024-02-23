@@ -135,7 +135,6 @@ transparencyBtn.addEventListener('click', () => {
 
 // Toggle border of the gold pass image when clicked
 goldPassLink.addEventListener('click', (e) => {
-    e.preventDefault();
     goldPassLink.classList.toggle('clicked');
     console.log("Gold Pass clicked");
      console.log(tagsSent);
@@ -151,7 +150,6 @@ OneSignal.User.addTags(tags);
 
 // Toggle border of the extra image when clicked
 extraImageLink.addEventListener('click', (e) => {
-    e.preventDefault();
     extraImageLink.classList.toggle('clicked');
     console.log("Chest of Gems clicked");
      console.log(tagsSent);
