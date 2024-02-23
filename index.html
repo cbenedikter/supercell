@@ -89,19 +89,6 @@ body {
     border-color: gold; /* Change border color to gold when clicked */
 }
 
-/* Popup styles */
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-}
-
 
 </style>
 </head>
@@ -140,7 +127,6 @@ body {
     </div>
 </div>
 
-    <div id="popup" class="popup">Item added to cart</div>
 
 <script>
 const transparencyBtn = document.getElementById('transparencyBtn');
@@ -199,30 +185,6 @@ OneSignal.User.addTags(tags);
       appId: "cf532c5e-5be2-4b00-ab6d-3d3d72ca9124",
     });
   });
-</script>
-
-<script>
-const goldPassLink = document.getElementById('goldPassLink');
-const extraImageLink = document.getElementById('extraImageLink');
-const popup = document.getElementById('popup');
-
-// Function to toggle display of the popup
-const togglePopup = () => {
-    if (popup.style.display === 'none') {
-        popup.style.display = 'block';
-    } else {
-        popup.style.display = 'none';
-    }
-};
-
-// Event listeners for the buttons
-goldPassLink.addEventListener('click', () => {
-    togglePopup();
-});
-
-extraImageLink.addEventListener('click', () => {
-    togglePopup();
-});
 </script>
 
     
