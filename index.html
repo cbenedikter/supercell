@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supercell Games</title>
+<style>
+/* Global styles */
+body {
+    margin: 0;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 100px;
+    padding: 0 20px;
+    display: flex;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.logo img {
+    width: 180px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    font-size: 28px;
+    margin-right: 20px;
+    color: #666666;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #666666;
+
+}
+
+.login button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Add transition effect */
+}
+
+/* Hero section styles */
+.hero-container {
+    margin-top: 20px;
+    padding: 0 40px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Gold Pass and Extra Image container styles */
+.chest-gems-container {
+    margin-left: 100px;
+}
+
+.gold-pass-image,
+.extra-image img {
+    width: 580px; /* Adjust width as needed */
+    height: auto;
+    border: 2px solid transparent; /* Add transparent border */
+    transition: border-color 0.3s ease; /* Add transition effect for border */
+}
+
+.gold-pass-image.clicked,
+.extra-image.clicked img {
+    border-color: gold; /* Change border color to gold when clicked */
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <img src="https://store.supercell.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstore_logo.4fc97a22.png&w=1920&q=100" alt="Supercell Logo">
+    </div>
+    <div class="menu">
+        <div class="menu-item"><a href="https://store.supercell.com/game/clashofclans">Clash of Clans</a></div>
+        <div class="menu-item"><a href="https://store.supercell.com/game/clashroyale">Clash Royale</a></div>
+        <div class="menu-item"><a href="https://store.supercell.com/game/brawlstars">Brawl Stars</a></div>
+        <div class="menu-item"><a href="https://store.supercell.com/game/hayday">Hay Day</a></div>
+    </div>
+    <div class="login">
+        <button id="transparencyBtn">Login</button>
+    </div>
+</div>
+
+<div class="hero-container">
+    <img class="hero-image" src="https://store.supercell.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero-desktop.bd7fd2e2.png&w=1920&q=75" alt="Hero Image">
+</div>
+
+<div class="container">
+    <div class="gold-pass-container chest-gems-container">
+        <a href="#" id="goldPassLink"><img class="gold-pass-image" src="https://imgur.com/ZDlY0oq.jpg" alt="Gold Pass Image"></a>
+    </div>
+    <div class="extra-image chest-gems-container">
+        <a href="#" id="extraImageLink"><img src="https://imgur.com/y4nWxfb.jpg" alt="Extra Image"></a>
+    </div>
+</div>
+
+<script>
+const transparencyBtn = document.getElementById('transparencyBtn');
+const goldPassLink = document.getElementById('goldPassLink');
+const extraImageLink = document.getElementById('extraImageLink');
+
+let transparencyClicked = false;
+
+// Toggle transparency of the button
+transparencyBtn.addEventListener('click', () => {
+    transparencyClicked = !transparencyClicked;
+    transparencyBtn.style.opacity = transparencyClicked ? '0.5' : '1';
+});
+
+// Toggle border of the gold pass image when clicked
+goldPassLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    goldPassLink.classList.toggle('clicked');
+});
+
+// Toggle border of the extra image when clicked
+extraImageLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    extraImageLink.classList.toggle('clicked');
+});
+</script>
+
+</body>
+</html>
