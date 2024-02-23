@@ -146,20 +146,22 @@ cart_update: Date.now(),
 };
 OneSignal.User.addTags(tags);
 
+         console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
+
 });
 
 // Toggle border of the extra image when clicked
 extraImageLink.addEventListener('click', (e) => {
     extraImageLink.classList.toggle('clicked');
     console.log("Chest of Gems clicked");
-     console.log(tagsSent);
-
+ 
     const tags = { 
  cart_update: Date.now(),
  product_name: "Chest of Gems",
  KEY_03: "VALUE_03"
 };
 OneSignal.User.addTags(tags);
+      console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
 
 });
 
