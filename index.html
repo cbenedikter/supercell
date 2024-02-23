@@ -88,10 +88,30 @@ body {
 .extra-image.clicked img {
     border-color: gold; /* Change border color to gold when clicked */
 }
+
+/* Popup styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+
 </style>
 </head>
 <body>
+<!-- Popup -->
+<div class="popup" id="popup">
+    Item added to cart
+</div>
 
+    
 <div class="header">
     <div class="logo">
         <img src="https://store.supercell.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstore_logo.4fc97a22.png&w=1920&q=100" alt="Supercell Logo">
@@ -119,6 +139,8 @@ body {
         <a href="#" id="extraImageLink"><img src="https://imgur.com/y4nWxfb.jpg" alt="Extra Image"></a>
     </div>
 </div>
+
+    <div id="popup" class="popup">Item added to cart</div>
 
 <script>
 const transparencyBtn = document.getElementById('transparencyBtn');
@@ -179,7 +201,29 @@ OneSignal.User.addTags(tags);
   });
 </script>
 
+<script>
+const goldPassLink = document.getElementById('goldPassLink');
+const extraImageLink = document.getElementById('extraImageLink');
+const popup = document.getElementById('popup');
 
+// Function to toggle display of the popup
+const togglePopup = () => {
+    if (popup.style.display === 'none') {
+        popup.style.display = 'block';
+    } else {
+        popup.style.display = 'none';
+    }
+};
+
+// Event listeners for the buttons
+goldPassLink.addEventListener('click', () => {
+    togglePopup();
+});
+
+extraImageLink.addEventListener('click', () => {
+    togglePopup();
+});
+</script>
 
     
 </body>
