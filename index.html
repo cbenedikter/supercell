@@ -89,7 +89,19 @@ body {
     border-color: gold; /* Change border color to gold when clicked */
 }
 
-
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+}
 </style>
 </head>
 <body>
@@ -122,7 +134,11 @@ body {
         <a href="#" id="extraImageLink"><img src="https://imgur.com/y4nWxfb.jpg" alt="Extra Image"></a>
     </div>
 </div>
-
+    
+<!-- Popup -->
+<div class="popup" id="popup">
+    Item added to cart
+</div>
 
 <script>
 const transparencyBtn = document.getElementById('transparencyBtn');
@@ -168,7 +184,12 @@ OneSignal.User.addTags(tags);
 
 });
 
-
+// Close popup when clicked outside of it
+document.addEventListener('click', (e) => {
+    if (e.target !== popup) {
+        popup.style.display = 'none'; // Hide the popup
+    }
+});
 
     
 </script>
