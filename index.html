@@ -144,7 +144,8 @@ body {
 const transparencyBtn = document.getElementById('transparencyBtn');
 const goldPassLink = document.getElementById('goldPassLink');
 const extraImageLink = document.getElementById('extraImageLink');
-
+const popup = document.getElementById('popup');
+    
 let transparencyClicked = false;
 
 // Toggle transparency of the button
@@ -157,6 +158,7 @@ transparencyBtn.addEventListener('click', () => {
 goldPassLink.addEventListener('click', (e) => {
     goldPassLink.classList.toggle('clicked');
     console.log("Gold Pass clicked");
+       popup.style.display = 'block'; 
    
     const tags = { 
 cart_update: Math.floor(Date.now() / 1000),
@@ -173,6 +175,7 @@ OneSignal.User.addTags(tags);
 extraImageLink.addEventListener('click', (e) => {
     extraImageLink.classList.toggle('clicked');
     console.log("Chest of Gems clicked");
+    popup.style.display = 'block'; 
  
     const tags = { 
 cart_update: Math.floor(Date.now() / 1000),
