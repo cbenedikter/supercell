@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const clearCartButton = document.querySelector('#checkout');
     clearCartButton.addEventListener('click', () => {
-        console.log(“click Purchase”);
+        console.log("click Purchase");
         OneSignal.sendOutcome("Purchase", 1);
      });
 });
