@@ -76,3 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
         clickedImageContainer.innerHTML = '';
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const clearCartButton = document.querySelector('#checkout');
+    clearCartButton.addEventListener('click', () => {
+        OneSignal.sendOutcome("Purchase", 1);
+     });
+});
+
+
+
