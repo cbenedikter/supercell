@@ -1,0 +1,160 @@
+   
+/* Global styles */
+body {
+    margin: 0;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 100px;
+    padding: 0 20px;
+    display: flex;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.logo img {
+    width: 180px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    font-size: 28px;
+    margin-right: 20px;
+    color: #666666;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #666666;
+}
+
+.login button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Add transition effect */
+}
+
+
+
+/* Hero section styles */
+.hero-container {
+    margin-top: 20px;
+    padding: 0 40px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Gold Pass and Extra Image container styles */
+.chest-gems-container {
+    margin-left: 100px;
+}
+
+.gold-pass-image,
+.extra-image img {
+    width: 580px; /* Adjust width as needed */
+    height: auto;
+    border: 2px solid transparent; /* Add transparent border */
+    transition: border-color 0.3s ease; /* Add transition effect for border */
+}
+
+.gold-pass-image.clicked,
+.extra-image.clicked img {
+    border-color: gold; /* Change border color to gold when clicked */
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+}
+
+
+
+/* Add padding to specific elements */
+
+#clickedImageContainer {
+    padding: 50px;
+}
+
+.checkout-heading {
+    font-size: 32px;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+
+
+.checkout button{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Add transition effect */
+}
+
+.checkout {
+    padding: 20px; /* Adjust the value as needed */
+    padding-left: 200px;
+}
+
+.returnToStore button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Add transition effect */
+}
+
+.returnToStore {
+    padding: 20px;
+    padding-left: 200px;
+}
+
+.clearCart button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Add transition effect */
+}
+
+.clearCart {
+    padding: 20px;
+    padding-left: 0px;
+    }
