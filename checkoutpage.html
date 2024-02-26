@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercell Games</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+
+    <!-- Your HTML content here -->
+    <h1 class="checkout-heading"> You have the following in your cart</h1>
+
+<div id="clickedImageContainer">
+    <!-- The clicked image will be displayed here -->
+</div>
+
+<div class="checkout">
+      <button id="checkout">Checkout</button>
+  </div>
+
+  <div class="returnToStore">
+    <a href="landing.html">
+    <button id="returnToStore">Back to Store</button>
+  </a>
+
+  <div class="clearCart">
+       <button id="clearCart">Clear Cart</button>
+  </a>
+</div>
+
+    <!-- Script to show the product image -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const clickedImage = localStorage.getItem('clickedImage');
+        if (clickedImage) {
+            const clickedImageContainer = document.getElementById('clickedImageContainer');
+            const img = document.createElement('img');
+            img.src = clickedImage;
+            img.alt = 'Clicked Image';
+            clickedImageContainer.appendChild(img);
+        }
+    });
+</script>
+
+ <!-- Script to show clear cart -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const clearCartButton = document.querySelector('.clearCart button'); // Select the clear cart button
+        clearCartButton.addEventListener('click', () => { // Add a click event listener
+            const clickedImageContainer = document.getElementById('clickedImageContainer');
+            // Remove the image element from the DOM
+            clickedImageContainer.innerHTML = '';
+        });
+    });
+</script>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
