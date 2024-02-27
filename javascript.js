@@ -89,13 +89,3 @@ OneSignal.User.addTags(tags);
       console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
 
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Get reference to the checkout button
-    const checkoutBtn = document.getElementById('checkout');
-
-    // Add click event listener to the checkout button
-    checkoutBtn.addEventListener('click', () => {
-        // Execute the desired JavaScript code
-        OneSignal.sendOutcome("Purchase", 1);
-    });
