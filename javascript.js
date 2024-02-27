@@ -122,5 +122,3 @@ if (purchaseButton) {
 } else {
   console.error("Element with ID 'purchase' not found!");
 }
-
-
