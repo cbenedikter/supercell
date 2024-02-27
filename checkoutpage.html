@@ -63,6 +63,14 @@ console.log("DOM Content Loaded");
 const clearCartButton = document.getElementById('clearCart');
 clearCartButton.addEventListener('click', () => {
 console.log("Cart Cleared");
+
+        const tags = { 
+cart_update: "",
+ product_name: "",
+ KEY_03: "VALUE_03"
+};
+OneSignal.User.addTags(tags);
+      console.log("Tags Sent: 'cart_update' : "" 'product_name' : "" 'KEY_03' : "" );
 });
 });
       </script>
