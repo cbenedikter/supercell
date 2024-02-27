@@ -73,3 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+          // Show console log and remove data tags when Clear Cart button is clicked
+document.addEventListener('DOMContentLoaded', () => {
+console.log("DOM Content Loaded");
+const clearCartButton = document.getElementById('clearCart');
+clearCartButton.addEventListener('click', () => {
+console.log("Cart Cleared");
+
+        const tags = { 
+cart_update: "",
+ product_name: "",
+ KEY_03: "VALUE_03"
+};
+});
+});
+
+
+
