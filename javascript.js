@@ -58,7 +58,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const goldPassLink = document.getElementById('goldPassLink');
     const extraImageLink = document.getElementById('extraImageLink');
-}
+
     goldPassLink.addEventListener('click', () => {
         // Store the URL of the Gold Pass Image in local storage
         localStorage.setItem('clickedImage', 'https://imgur.com/ZDlY0oq.jpg');
@@ -88,7 +88,7 @@ cart_update: "",
 OneSignal.User.addTags(tags);
       console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
 
-});
+}});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get reference to the checkout button
