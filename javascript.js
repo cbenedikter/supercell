@@ -47,6 +47,15 @@ OneSignal.User.addTags(tags);
       console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
 
 });
+
+
+// Show consol log and remove data tags when Clear Cart button is clicked
+checkout.addEventListener(`click`, (e) => {
+    console.log("Cart Cleared");
+};
+
+
+
 // Close popup when clicked outside of it
 document.addEventListener('click', (e) => {
     if (e.target !== popup) {
