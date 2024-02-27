@@ -83,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
 cart_update: "",
  product_name: "",
  KEY_03: "VALUE_03"
-       }});
+       };
 
 OneSignal.User.addTags(tags);
       console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
-
+    });
 });
