@@ -1,3 +1,4 @@
+
 const transparencyBtn = document.getElementById('transparencyBtn');
 const goldPassLink = document.getElementById('goldPassLink');
 const extraImageLink = document.getElementById('extraImageLink');
@@ -13,39 +14,39 @@ transparencyBtn.addEventListener('click', () => {
 
 // Toggle border of the gold pass image when clicked
 goldPassLink.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent click event from bubbling up to document
+        e.stopPropagation(); // Prevent click event from bubbling up to document
     goldPassLink.classList.toggle('clicked');
     console.log("Gold Pass clicked");
-    popup.style.display = 'block'; 
-
+       popup.style.display = 'block'; 
+   
     const tags = { 
-        cart_update: Math.floor(Date.now() / 1000),
-        product_name: "Gold Pass",
-        KEY_03: "VALUE_03"
-    };
-    OneSignal.User.addTags(tags);
+cart_update: Math.floor(Date.now() / 1000),
+product_name: "Gold Pass",
+ KEY_03: "VALUE_03"
+};
+OneSignal.User.addTags(tags);
 
-    console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
+         console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
 
 });
+
 
 // Toggle border of the extra image when clicked
 extraImageLink.addEventListener('click', (e) => {
-    e.stopPropagation();
+       e.stopPropagation();
     extraImageLink.classList.toggle('clicked');
     console.log("Chest of Gems clicked");
     popup.style.display = 'block'; 
-
+ 
     const tags = { 
-        cart_update: Math.floor(Date.now() / 1000),
-        product_name: "Chest of Gems",
-        KEY_03: "VALUE_03"
-    };
-    OneSignal.User.addTags(tags);
-    console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
+cart_update: Math.floor(Date.now() / 1000),
+ product_name: "Chest of Gems",
+ KEY_03: "VALUE_03"
+};
+OneSignal.User.addTags(tags);
+      console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
 
 });
-
 // Close popup when clicked outside of it
 document.addEventListener('click', (e) => {
     if (e.target !== popup) {
@@ -57,7 +58,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const goldPassLink = document.getElementById('goldPassLink');
     const extraImageLink = document.getElementById('extraImageLink');
-
+}
     goldPassLink.addEventListener('click', () => {
         // Store the URL of the Gold Pass Image in local storage
         localStorage.setItem('clickedImage', 'https://imgur.com/ZDlY0oq.jpg');
@@ -69,32 +70,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Event listener for the clear cart button
 document.addEventListener('DOMContentLoaded', () => {
     const clearCartButton = document.querySelector('.clearCart button');
     clearCartButton.addEventListener('click', () => {
         const clickedImageContainer = document.getElementById('clickedImageContainer');
         // Remove the image element from the DOM
         clickedImageContainer.innerHTML = '';
-        console.log("Clear Cart button clicked");
+       console.log("Clear Cart button clicked");
         // OneSignal remove data tag methods and console log
        
-        const tags = { 
-            cart_update: "",
-            product_name: "",
-            KEY_03: "VALUE_03"
-        };
+       const tags = { 
+cart_update: "",
+ product_name: "",
+ KEY_03: "VALUE_03"
+};
 
-        OneSignal.User.addTags(tags);
-        console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
-    });
+OneSignal.User.addTags(tags);
+      console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
+
 });
 
-// Event listener for the checkout button
 document.addEventListener('DOMContentLoaded', () => {
+    // Get reference to the checkout button
     const checkoutBtn = document.getElementById('checkout');
 
+    // Add click event listener to the checkout button
     checkoutBtn.addEventListener('click', () => {
+        // Execute the desired JavaScript code
         OneSignal.sendOutcome("Purchase", 1);
     });
 });
