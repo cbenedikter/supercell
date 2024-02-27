@@ -50,9 +50,13 @@ OneSignal.User.addTags(tags);
 
 
 // Show consol log and remove data tags when Clear Cart button is clicked
-checkout.addEventListener(`click`, (e) => {
-    console.log("Cart Cleared");
+document.addEventListener('DOMContentLoaded', () => {
+    const clearCartButton = document.getElementById('clearCart');
+    clearCartButton.addEventListener('click', () => {
+        console.log("Cart Cleared");
+    });
 });
+
 
 
 
