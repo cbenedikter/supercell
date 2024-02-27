@@ -30,34 +30,6 @@ OneSignal.User.addTags(tags);
 
 });
 
-// OneSignal consol log : Show subscriber status
-
-  OneSignal.push(function () {
-    var isPushSupported = OneSignal.isPushNotificationsSupported();
-    console.log("Push Supported on Browser: ", isPushSupported);
-    OneSignal.isPushNotificationsEnabled(function (isEnabled) {
-      if (isEnabled) {
-        console.log("Push notifications are enabled!");
-        OneSignal.getUserId(function (userId) {
-          console.log("OneSignal Push User ID:", userId);
-        });
-        OneSignal.getEmailId(function (emailId) {
-          console.log("OneSignal Email User ID:", emailId)
-        })
-        OneSignal.getExternalUserId().then(function(externalUserId){
-          if (externalUserId == null){
-            var anonUserId = Math.floor(1000000000 + Math.random() * 9000000000);
-            console.log("externalUserId: ", anonUserId);
-            OneSignal.setExternalUserId(anonUserId);
-          } else {
-            console.log("externalUserId: ", externalUserId);
-          }
-        });
-      }
-      else
-        console.log("Push notifications are not enabled yet.");
-    });
-
 
 // Toggle border of the extra image when clicked
 extraImageLink.addEventListener('click', (e) => {
