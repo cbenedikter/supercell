@@ -99,4 +99,3 @@ document.addEventListener('DOMContentLoaded', () => {
         // Execute the desired JavaScript code
         OneSignal.sendOutcome("Purchase", 1);
     });
-});
