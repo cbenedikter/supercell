@@ -107,18 +107,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-const purchaseButton = document.getElementById("checkout");
-
-// Check if the element exists
-if (purchaseButton) {
-  // Add a click event listener to the element
-  purchaseButton.addEventListener("click", function() {
-    // Code to be executed when the button is clicked
-    console.log("Purchase button clicked!");
-           OneSignal.sendOutcome("Purchase", 1);
-    // Replace this with your desired functionality, like processing a purchase, displaying a confirmation message, etc.
-  });
-} else {
-  console.error("Element with ID 'purchase' not found!");
-}
