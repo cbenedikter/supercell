@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const tags =  ['cart_update' , 'product_name'];
         OneSignal.User.removeTags(tags);
+        console.log("Thanks Collin","whats up","smiley face",tags);
 
     });
 });
