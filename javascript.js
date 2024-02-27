@@ -70,22 +70,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const clearCartButton = document.querySelector('.clearCart button');
-    clearCartButton.addEventListener('click', () => {
-        const clickedImageContainer = document.getElementById('clickedImageContainer');
-        // Remove the image element from the DOM
-        clickedImageContainer.innerHTML = '';
-       console.log("Clear Cart button clicked");
-        // OneSignal remove data tag methods and console log
-       
-       const tags = { 
-cart_update: "",
- product_name: "",
- KEY_03: "VALUE_03"
-       };
-
-OneSignal.User.addTags(tags);
-      console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
-    });
-});
