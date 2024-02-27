@@ -56,23 +56,17 @@
     });
 </script>
 
-      <script>
-          // Show console log and remove data tags when Clear Cart button is clicked
-document.addEventListener('DOMContentLoaded', () => {
-console.log("DOM Content Loaded");
-const clearCartButton = document.getElementById('clearCart');
-clearCartButton.addEventListener('click', () => {
-console.log("Cart Cleared");
 
-        const tags = { 
-cart_update: "",
- product_name: "",
- KEY_03: "VALUE_03"
-};
+<script src="javascript.js"></script>
+
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(function(OneSignal) {
+    OneSignal.init({
+      appId: "cf532c5e-5be2-4b00-ab6d-3d3d72ca9124",
 });
 });
-      </script>
-
-    <script src="javascript.js"></script>
+</script>
 </body>
 </html>
