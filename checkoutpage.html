@@ -45,7 +45,16 @@
 </script>
 
  <!-- Script to show clear cart -->
-
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const clearCartButton = document.querySelector('.clearCart button'); // Select the clear cart button
+        clearCartButton.addEventListener('click', () => { // Add a click event listener
+            const clickedImageContainer = document.getElementById('clickedImageContainer');
+            // Remove the image element from the DOM
+            clickedImageContainer.innerHTML = '';
+        });
+    });
+</script>
 
     <script src="javascript.js"></script>
 </body>
