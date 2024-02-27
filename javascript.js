@@ -75,8 +75,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const clickedImageContainer = document.getElementById('clickedImageContainer');
         // Remove the image element from the DOM
         clickedImageContainer.innerHTML = '';
+       console.log("Clear Cart button clicked");
+        // OneSignal remove data tag methods and consol
+       
+       const tags = { 
+cart_update: "",
+ product_name: "",
+ KEY_03: "VALUE_03"
+};
+        OneSignal.User.addTags(tags);
+      console.log("Tags Sent: 'cart_update' : "" 'product_name' : "" 'KEY_03' : "" );
     });
-});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get reference to the checkout button
