@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM Content Loaded");
     const checkoutButton = document.getElementById('checkout');
     checkoutButton.addEventListener('click', () => {
-        OneSignal.Session.sendUniqueOutcome("Purchase", 1);
+        OneSignal.Session.sendOutcome("Purchase", 1);
         console.log("Purchase Outcome sent to OneSignal");
 
     });
