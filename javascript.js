@@ -6,52 +6,45 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let transparencyClicked = false;
     
-    // Toggle transparency of the button
-    transparencyBtn.addEventListener('click', () => {
-        transparencyClicked = !transparencyClicked;
-        transparencyBtn.style.opacity = transparencyClicked ? '0.5' : '1';
+// Toggle transparency of the button
+transparencyBtn.addEventListener('click', () => {
+    transparencyClicked = !transparencyClicked;
+    transparencyBtn.style.opacity = transparencyClicked ? '0.5' : '1';
     });
     
-    // Toggle border of the gold pass image when clicked
-    goldPassLink.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent click event from bubbling up to document
-        goldPassLink.classList.toggle('clicked');
-        console.log("Gold Pass clicked");
-           popup.style.display = 'block'; 
-   
-        const tags = { 
-    cart_update: Math.floor(Date.now() / 1000),
-    product_name: "Gold Pass",
-     KEY_03: "VALUE_03"
-    };
+// Toggle border of the gold pass image when clicked
+goldPassLink.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent click event from bubbling up to document
+    goldPassLink.classList.toggle('clicked');
+    console.log("Gold Pass clicked");
+    popup.style.display = 'block'; 
+    const tags = { 
+        cart_update: Math.floor(Date.now() / 1000),
+        product_name: "Gold Pass",
+        KEY_03: "VALUE_03"
+        };
     OneSignal.User.addTags(tags);
-    
-             console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
-    
+    console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
     });
     
     
-    // Toggle border of the extra image when clicked
-    extraImageLink.addEventListener('click', (e) => {
-           e.stopPropagation();
-        extraImageLink.classList.toggle('clicked');
-        console.log("Chest of Gems clicked");
-        popup.style.display = 'block'; 
-     
-        const tags = { 
-    cart_update: Math.floor(Date.now() / 1000),
-     product_name: "Chest of Gems",
-     KEY_03: "VALUE_03"
-    };
+// Toggle border of the extra image when clicked
+extraImageLink.addEventListener('click', (e) => {
+    e.stopPropagation();
+    extraImageLink.classList.toggle('clicked');
+    console.log("Chest of Gems clicked");
+    popup.style.display = 'block'; 
+    const tags = { 
+        cart_update: Math.floor(Date.now() / 1000),
+        product_name: "Chest of Gems",
+        KEY_03: "VALUE_03"
+        };
     OneSignal.User.addTags(tags);
-          console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
-    
+    console.log("Tags Sent: 'cart_update' : " + tags.cart_update + " 'product_name' : " + tags.product_name + " 'KEY_03' : " + tags.KEY_03 );
     });
     
-    
-    
-    // Close popup when clicked outside of it
-    document.addEventListener('click', (e) => {
+// Close popup when clicked outside of it
+document.addEventListener('click', (e) => {
         if (e.target !== popup) {
             popup.style.display = 'none'; // Hide the popup
         }
@@ -75,30 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-          // Show console log and remove data tags when Clear Cart button is clicked
+// Show console log and remove data tags when Clear Cart button is clicked
 document.addEventListener('DOMContentLoaded', () => {
-    
     console.log("DOM Content Loaded");
     const clearCartButton = document.getElementById('clearCart');
     clearCartButton.addEventListener('click', () => {
-
         const tags =  ['cart_update' , 'product_name'];
         OneSignal.User.removeTags(tags);
         console.log(tags);
-
     });
 });
 
 
-          // Send a custom outcome to OneSignal when Check out button is clicked
+// Send a custom outcome to OneSignal when Check out button is clicked
 document.addEventListener('DOMContentLoaded', () => {
-    
     console.log("DOM Content Loaded");
     const checkoutButton = document.getElementById('checkout');
     checkoutButton.addEventListener('click', () => {
         OneSignal.Session.sendOutcome("Purchase", 1);
         console.log("Purchase Outcome sent to OneSignal");
-
     });
 });
 
