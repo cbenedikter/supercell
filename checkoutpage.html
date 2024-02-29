@@ -22,7 +22,7 @@
 
   <div class="returnToStore">
     <a href="index.html">
-        <button id="returnToStore">Back to Store</button>
+    <button id="returnToStore">Back to Store</button>
     </a>
   </div>
 
@@ -32,7 +32,7 @@
 
     <!-- Script to show the product image -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
         const clickedImage = localStorage.getItem('clickedImage');
         if (clickedImage) {
             const clickedImageContainer = document.getElementById('clickedImageContainer');
@@ -41,19 +41,18 @@
             img.alt = 'Clicked Image';
             clickedImageContainer.appendChild(img);
         }
-    });
+});
 </script>
 
  <!-- Script to show clear cart -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
         const clearCartButton = document.querySelector('.clearCart button'); // Select the clear cart button
         clearCartButton.addEventListener('click', () => { // Add a click event listener
-            const clickedImageContainer = document.getElementById('clickedImageContainer');
-            // Remove the image element from the DOM
+            const clickedImageContainer = document.getElementById('clickedImageContainer');   // Remove the image element from the DOM
             clickedImageContainer.innerHTML = '';
-        });
-    });
+            });
+});
 </script>
 
 
@@ -64,9 +63,9 @@
     window.OneSignalDeferred = window.OneSignalDeferred || [];
     OneSignalDeferred.push(function(OneSignal) {
     OneSignal.init({
-      appId: "cf532c5e-5be2-4b00-ab6d-3d3d72ca9124",
-});
-});
+        appId: "cf532c5e-5be2-4b00-ab6d-3d3d72ca9124",
+        });
+    });
 </script>
 </body>
 </html>
