@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutButton = document.getElementById('checkout');
     checkoutButton.addEventListener('click', () => {
         OneSignal.Session.sendOutcome("Purchase", 1);
+        OneSignal.Session.sendOutcome("Registered", 1);
         console.log("Purchase Outcome sent to OneSignal");
     });
 });
